@@ -140,26 +140,69 @@ Each profile is a complete aesthetic system. All 4 profiles must implement every
 
 ## Traceability
 
-*Populated during roadmap creation.*
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 through FOUND-05 | Phase 1 | Pending |
-| DESK-01 through DESK-11 | Phase 1-2 | Pending |
-| PROF-01 through PROF-04 | Phase 2 | Pending |
-| TYPE-01 through TYPE-04 | Phase 2 | Pending |
-| BOOT-01 through BOOT-04 | Phase 3 | Pending |
-| PILOT-01 through PILOT-05 | Phase 3 | Pending |
-| SOUND-01 through SOUND-06 | Phase 3-4 | Pending |
-| MAGI-01 through MAGI-04 | Phase 4 | Pending |
-| KEY-01 through KEY-08 | Phase 1-2 | Pending |
-| ISO-01 through ISO-04 | Phase 5 | Pending |
+| FOUND-01 | Phase 1: Flake Foundation | Pending |
+| FOUND-02 | Phase 1: Flake Foundation | Pending |
+| FOUND-03 | Phase 1: Flake Foundation | Pending |
+| FOUND-04 | Phase 1: Flake Foundation | Pending |
+| FOUND-05 | Phase 1: Flake Foundation | Pending |
+| DESK-01 | Phase 2: Desktop Shell | Pending |
+| DESK-02 | Phase 2: Desktop Shell | Pending |
+| DESK-03 | Phase 2: Desktop Shell | Pending |
+| DESK-04 | Phase 2: Desktop Shell | Pending |
+| DESK-05 | Phase 2: Desktop Shell | Pending |
+| DESK-06 | Phase 2: Desktop Shell | Pending |
+| DESK-07 | Phase 2: Desktop Shell | Pending |
+| DESK-08 | Phase 2: Desktop Shell | Pending |
+| DESK-09 | Phase 2: Desktop Shell | Pending |
+| DESK-10 | Phase 2: Desktop Shell | Pending |
+| DESK-11 | Phase 2: Desktop Shell | Pending |
+| KEY-01 | Phase 2: Desktop Shell | Pending |
+| KEY-02 | Phase 2: Desktop Shell | Pending |
+| KEY-06 | Phase 2: Desktop Shell | Pending |
+| KEY-07 | Phase 2: Desktop Shell | Pending |
+| PROF-01 | Phase 3: Typography & NERV Command Profile | Pending |
+| TYPE-01 | Phase 3: Typography & NERV Command Profile | Pending |
+| TYPE-02 | Phase 3: Typography & NERV Command Profile | Pending |
+| TYPE-03 | Phase 3: Typography & NERV Command Profile | Pending |
+| TYPE-04 | Phase 3: Typography & NERV Command Profile | Pending |
+| PROF-02 | Phase 4: EVA Unit Profiles | Pending |
+| PROF-03 | Phase 4: EVA Unit Profiles | Pending |
+| PROF-04 | Phase 4: EVA Unit Profiles | Pending |
+| SOUND-01 | Phase 5: Soundscape System | Pending |
+| SOUND-02 | Phase 5: Soundscape System | Pending |
+| SOUND-03 | Phase 5: Soundscape System | Pending |
+| SOUND-04 | Phase 5: Soundscape System | Pending |
+| SOUND-05 | Phase 5: Soundscape System | Pending |
+| SOUND-06 | Phase 5: Soundscape System | Pending |
+| PILOT-01 | Phase 6: Profile Switching Engine | Pending |
+| PILOT-05 | Phase 6: Profile Switching Engine | Pending |
+| KEY-04 | Phase 6: Profile Switching Engine | Pending |
+| PILOT-02 | Phase 7: Pilot Selection GUI | Pending |
+| PILOT-03 | Phase 7: Pilot Selection GUI | Pending |
+| PILOT-04 | Phase 7: Pilot Selection GUI | Pending |
+| KEY-03 | Phase 7: Pilot Selection GUI | Pending |
+| MAGI-01 | Phase 8: MAGI Dashboard | Pending |
+| MAGI-02 | Phase 8: MAGI Dashboard | Pending |
+| MAGI-03 | Phase 8: MAGI Dashboard | Pending |
+| MAGI-04 | Phase 8: MAGI Dashboard | Pending |
+| KEY-05 | Phase 8: MAGI Dashboard | Pending |
+| BOOT-01 | Phase 9: Boot Pipeline | Pending |
+| BOOT-02 | Phase 9: Boot Pipeline | Pending |
+| BOOT-03 | Phase 9: Boot Pipeline | Pending |
+| BOOT-04 | Phase 9: Boot Pipeline | Pending |
+| ISO-01 | Phase 10: ISO & Installation | Pending |
+| ISO-02 | Phase 10: ISO & Installation | Pending |
+| ISO-03 | Phase 10: ISO & Installation | Pending |
+| ISO-04 | Phase 10: ISO & Installation | Pending |
+| KEY-08 | Phase 10: ISO & Installation | Pending |
 
 **Coverage:**
-- v1 requirements: 54 total
-- Mapped to phases: 54
-- Unmapped: 0 ✓
+- v1 requirements: 55 total
+- Mapped to phases: 55
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-07*
-*Last updated: 2026-04-07 after initial definition*
+*Last updated: 2026-04-07 after roadmap creation*
