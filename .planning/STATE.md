@@ -9,29 +9,29 @@ See: .planning/PROJECT.md (updated 2026-04-06)
 
 ## Current Position
 
-Phase: 1 of 10 (Flake Foundation)
-Plan: 2 of 3 in current phase (complete); next: Plan 03 (Stylix + home-manager)
-Status: In progress
-Last activity: 2026-04-14 -- Plan 01-02 executed (Hyprland NixOS + home-manager modules)
+Phase: 1 of 10 (Flake Foundation) -- COMPLETE
+Plan: 3 of 3 in current phase (complete); Phase 1 done; next: Phase 2 (Profile Engine)
+Status: Phase 1 complete; Phase 2 unblocked
+Last activity: 2026-04-14 -- Plan 01-03 executed (Stylix + home-manager wiring)
 
-Progress: [██░░░░░░░░] 20%
+Progress: [███░░░░░░░] 30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: ~1.5min
+- Total plans completed: 3
+- Average duration: ~1.7min
 - Total execution time: <1 hour
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-flake-foundation | 2/3 | ~3min | ~1.5min |
+| 01-flake-foundation | 3/3 | ~5min | ~1.7min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2min, 2 tasks, 5 files), 01-02 (1min, 2 tasks, 4 files)
-- Trend: fast and stable (n=2)
+- Last 5 plans: 01-01 (2min, 2 tasks, 5 files), 01-02 (1min, 2 tasks, 4 files), 01-03 (2min, 2 tasks, 4 files)
+- Trend: fast and stable (n=3)
 
 *Updated after each plan completion*
 
@@ -39,6 +39,7 @@ Progress: [██░░░░░░░░] 20%
 |------|----------|-------|-------|
 | Phase 01 P01 | 2min | 2 | 5 |
 | Phase 01-flake-foundation P02 | 1min | 2 tasks | 4 files |
+| Phase 01-flake-foundation P03 | 2min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -55,6 +56,9 @@ Recent decisions affecting current work:
 - [Phase 01-02]: Skip UWSM for Phase 1 (conflicts with home-manager systemd integration)
 - [Phase 01-02]: Use monitor=",preferred,auto,auto" for GPU-agnostic VM + hardware boot
 - [Phase 01-02]: NixOS-level compositor at modules/nixos/hyprland.nix; user-level at modules/home/hyprland.nix (clean separation)
+- [Phase 01-flake-foundation]: [Phase 01-03]: Stylix auto-integrates into home-manager via NixOS module -- never manually import stylix.homeModules.stylix
+- [Phase 01-flake-foundation]: [Phase 01-03]: home-manager wired with useGlobalPkgs + useUserPackages for shared nixpkgs
+- [Phase 01-flake-foundation]: [Phase 01-03]: NERV Command base16 palette and DejaVu/wallpaper are Phase 1 placeholders -- Phase 3 swap points documented inline
 
 ### Pending Todos
 
@@ -69,5 +73,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-14
-Stopped at: Completed 01-02-PLAN.md (Hyprland); Plan 01-03 (Stylix + home-manager) unblocked
-Resume file: .planning/phases/01-flake-foundation/01-03-PLAN.md
+Stopped at: Completed 01-03-PLAN.md; Phase 1 (Flake Foundation) complete; Phase 2 unblocked
+Resume file: .planning/phases/02-profile-engine/ (to be created by /gsd:research-phase)
