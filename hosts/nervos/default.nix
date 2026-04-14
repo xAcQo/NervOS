@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../modules/nixos/gpu.nix
     ../../modules/nixos/hyprland.nix
+    ../../modules/nixos/stylix.nix
   ];
 
   # Boot
