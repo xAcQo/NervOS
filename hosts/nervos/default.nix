@@ -3,7 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos/gpu.nix
-    # ../../modules/nixos/hyprland.nix  # Wired in Plan 01-02
+    ../../modules/nixos/hyprland.nix
   ];
 
   # Boot
@@ -27,6 +27,7 @@
 
   # System packages (minimal for Phase 1)
   environment.systemPackages = with pkgs; [
+    kitty
     git
     vim
   ];
