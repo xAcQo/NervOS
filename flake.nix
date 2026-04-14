@@ -24,8 +24,13 @@
       specialArgs = { inherit self; };
       modules = [
         ./hosts/nervos
-        # Hyprland: wired in Plan 01-02
-        # Stylix + home-manager: wired in Plan 01-03
+        stylix.nixosModules.stylix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.pilot = import ./modules/home;
+        }
       ];
     };
   };
