@@ -8,6 +8,11 @@
     # and has mixed community reception. Skip for Phase 1.
   };
 
+  # hyprlock: auto-configures security.pam.services.hyprlock. Required -- without
+  # this, hyprlock accepts no input because PAM has no service entry. Do NOT
+  # manually write a PAM service; the module handles it. (RESEARCH.md Pitfall 3)
+  programs.hyprlock.enable = true;
+
   # Display manager: greetd with tuigreet
   services.greetd = {
     enable = true;
