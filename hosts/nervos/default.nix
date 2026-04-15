@@ -27,11 +27,25 @@
     initialPassword = "nervos";
   };
 
-  # System packages (minimal for Phase 1)
+  # System packages
   environment.systemPackages = with pkgs; [
+    # Existing
     kitty
     git
     vim
+
+    # Screenshot toolchain (Plan 02-03)
+    grimblast          # Hyprland-blessed screenshot wrapper
+    grim               # Wayland screenshot primitive
+    slurp              # region selector for grimblast area mode
+    hyprpicker         # screen freeze during area select (optional but recommended)
+    wl-clipboard       # provides wl-copy/wl-paste -- required by grimblast copy and by cliphist
+    jq                 # grimblast dependency for JSON parsing of hyprctl output
+    libnotify          # provides notify-send -- grimblast status notifications + manual mako test
+
+    # Input helpers used by keybinds (Plan 02-04 will call these)
+    brightnessctl      # XF86MonBrightness*
+    playerctl          # XF86AudioPlay/Next/Prev
   ];
 
   # Enable Nix flakes
