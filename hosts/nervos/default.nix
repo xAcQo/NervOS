@@ -5,6 +5,7 @@
     ../../modules/nixos/gpu.nix
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/stylix.nix
+    ../../modules/nixos/file-manager.nix
   ];
 
   # Boot
