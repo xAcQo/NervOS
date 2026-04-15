@@ -6,6 +6,8 @@
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/stylix.nix
     ../../modules/nixos/file-manager.nix
+    ../../modules/nixos/audio.nix
+    ../../modules/nixos/network.nix
   ];
 
   # Boot
