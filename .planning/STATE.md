@@ -10,17 +10,17 @@ See: .planning/PROJECT.md (updated 2026-04-06)
 ## Current Position
 
 Phase: 2 of 10 (Desktop Shell) -- IN PROGRESS
-Plan: 2 of 4 in current phase (complete); next: 02-03
-Status: Phase 2 Plan 02 complete; 02-03 unblocked
-Last activity: 2026-04-15 -- Plan 02-02 executed (Thunar + mako + hyprlock/hypridle)
+Plan: 3 of 4 in current phase (complete); next: 02-04
+Status: Phase 2 Plan 03 complete; 02-04 unblocked
+Last activity: 2026-04-15 -- Plan 02-03 executed (hyprpaper + screenshot toolchain)
 
-Progress: [███░░░░░░░] 35%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: ~1.4min
+- Total plans completed: 6
+- Average duration: ~1.5min
 - Total execution time: <1 hour
 
 **By Phase:**
@@ -28,11 +28,11 @@ Progress: [███░░░░░░░] 35%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-flake-foundation | 3/3 | ~5min | ~1.7min |
-| 02-desktop-shell | 2/4 | ~2min | ~1min |
+| 02-desktop-shell | 3/4 | ~4min | ~1.3min |
 
 **Recent Trend:**
-- Last 5 plans: 01-02 (1min), 01-03 (2min), 02-01 (1min, 3 tasks, 4 files), 02-02 (1min, 3 tasks, 6 files)
-- Trend: fast and stable (n=5)
+- Last 5 plans: 01-03 (2min), 02-01 (1min, 3 tasks, 4 files), 02-02 (1min, 3 tasks, 6 files), 02-03 (2min, 3 tasks, 3 files)
+- Trend: fast and stable (n=6)
 
 *Updated after each plan completion*
 
@@ -43,6 +43,7 @@ Progress: [███░░░░░░░] 35%
 | Phase 01-flake-foundation P03 | 2min | 2 tasks | 4 files |
 | Phase 02-desktop-shell P01 | 1min | 3 tasks | 4 files |
 | Phase 02-desktop-shell P02 | 1min | 3 tasks | 6 files |
+| Phase 02-desktop-shell P03 | 2min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -67,6 +68,9 @@ Recent decisions affecting current work:
 - [Phase 02-desktop-shell]: [Phase 02-01]: Rofi pinned to pkgs.rofi-wayland (plain rofi renders broken on Hyprland)
 - [Phase 02-desktop-shell]: [Phase 02-02]: Thunar at NixOS level (gvfs/tumbler services); mako+hyprlock behavior-only (Stylix themes)
 - [Phase 02-desktop-shell]: [Phase 02-02]: programs.hyprlock.enable on NixOS side is mandatory -- auto-configures PAM; never hand-write security.pam.services.hyprlock
+- [Phase 02-desktop-shell]: [Phase 02-03]: hyprpaper over swww (swww archived late 2024); wallpaper path shared with Stylix via single relative Nix import
+- [Phase 02-desktop-shell]: [Phase 02-03]: grimblast + deps installed as system packages (not home-manager) so systemd user services can access wl-copy/wl-paste
+- [Phase 02-desktop-shell]: [Phase 02-03]: brightnessctl/playerctl added in 02-03 (not 02-04) to centralise CLI package management
 
 ### Pending Todos
 
@@ -81,5 +85,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-15
-Stopped at: Completed 02-02-PLAN.md; Phase 2 Plan 03 next
-Resume file: .planning/phases/02-desktop-shell/02-03-PLAN.md
+Stopped at: Completed 02-03-PLAN.md; Phase 2 Plan 04 next
+Resume file: .planning/phases/02-desktop-shell/02-04-PLAN.md
