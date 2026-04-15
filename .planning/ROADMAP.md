@@ -52,7 +52,7 @@ Plans:
   3. Screenshots capture to clipboard via PrtSc (area) and Shift+PrtSc (fullscreen)
   4. Audio plays through speakers/headphones with volume adjustable via keyboard media keys; WiFi connects without opening a terminal
   5. Super+V opens clipboard history; Thunar opens and browses files; mako shows test notifications; hyprlock activates and accepts password
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
 - [ ] 02-01: Status bar, launcher, and terminal
