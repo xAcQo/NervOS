@@ -5,6 +5,8 @@
     ./waybar.nix
     ./rofi.nix
     ./kitty.nix
+    ./mako.nix
+    ./lock.nix
     # Do NOT import Stylix here -- it auto-integrates via the NixOS module.
     # Manually importing stylix.homeModules.stylix causes double-definition errors.
   ];
