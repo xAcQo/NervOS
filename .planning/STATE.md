@@ -5,22 +5,22 @@
 See: .planning/PROJECT.md (updated 2026-04-06)
 
 **Core value:** A single click or hotkey transports you into the world of Evangelion -- every pixel, sound, font, and animation shifts to match your chosen pilot's identity.
-**Current focus:** Phase 1 - Flake Foundation
+**Current focus:** Phase 2 - Desktop Shell
 
 ## Current Position
 
-Phase: 1 of 10 (Flake Foundation) -- COMPLETE
-Plan: 3 of 3 in current phase (complete); Phase 1 done; next: Phase 2 (Profile Engine)
-Status: Phase 1 complete; Phase 2 unblocked
-Last activity: 2026-04-14 -- Plan 01-03 executed (Stylix + home-manager wiring)
+Phase: 2 of 10 (Desktop Shell) -- IN PROGRESS
+Plan: 1 of 4 in current phase (complete); next: 02-02
+Status: Phase 2 Plan 01 complete; 02-02 unblocked
+Last activity: 2026-04-15 -- Plan 02-01 executed (waybar + rofi + kitty home-manager modules)
 
-Progress: [███░░░░░░░] 30%
+Progress: [███░░░░░░░] 32%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: ~1.7min
+- Total plans completed: 4
+- Average duration: ~1.5min
 - Total execution time: <1 hour
 
 **By Phase:**
@@ -28,10 +28,11 @@ Progress: [███░░░░░░░] 30%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-flake-foundation | 3/3 | ~5min | ~1.7min |
+| 02-desktop-shell | 1/4 | ~1min | ~1min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2min, 2 tasks, 5 files), 01-02 (1min, 2 tasks, 4 files), 01-03 (2min, 2 tasks, 4 files)
-- Trend: fast and stable (n=3)
+- Last 5 plans: 01-01 (2min, 2 tasks, 5 files), 01-02 (1min, 2 tasks, 4 files), 01-03 (2min, 2 tasks, 4 files), 02-01 (1min, 3 tasks, 4 files)
+- Trend: fast and stable (n=4)
 
 *Updated after each plan completion*
 
@@ -40,6 +41,7 @@ Progress: [███░░░░░░░] 30%
 | Phase 01 P01 | 2min | 2 | 5 |
 | Phase 01-flake-foundation P02 | 1min | 2 tasks | 4 files |
 | Phase 01-flake-foundation P03 | 2min | 2 tasks | 4 files |
+| Phase 02-desktop-shell P01 | 1min | 3 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -59,6 +61,9 @@ Recent decisions affecting current work:
 - [Phase 01-flake-foundation]: [Phase 01-03]: Stylix auto-integrates into home-manager via NixOS module -- never manually import stylix.homeModules.stylix
 - [Phase 01-flake-foundation]: [Phase 01-03]: home-manager wired with useGlobalPkgs + useUserPackages for shared nixpkgs
 - [Phase 01-flake-foundation]: [Phase 01-03]: NERV Command base16 palette and DejaVu/wallpaper are Phase 1 placeholders -- Phase 3 swap points documented inline
+- [Phase 02-desktop-shell]: [Phase 02-01]: Behavior-only home-manager modules for waybar/rofi/kitty -- Stylix owns all theming (no style/color/font in any)
+- [Phase 02-desktop-shell]: [Phase 02-01]: Waybar uses systemd.enable=true -- managed by Hyprland graphical-session target, no exec-once needed
+- [Phase 02-desktop-shell]: [Phase 02-01]: Rofi pinned to pkgs.rofi-wayland (plain rofi renders broken on Hyprland)
 
 ### Pending Todos
 
@@ -72,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-14
-Stopped at: Completed 01-03-PLAN.md; Phase 1 (Flake Foundation) complete; Phase 2 unblocked
-Resume file: .planning/phases/02-profile-engine/ (to be created by /gsd:research-phase)
+Last session: 2026-04-15
+Stopped at: Completed 02-01-PLAN.md; Phase 2 Plan 02 (Hyprland keybinds) next
+Resume file: .planning/phases/02-desktop-shell/02-02-PLAN.md
