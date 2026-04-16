@@ -69,7 +69,7 @@ Plans:
   2. Matisse EB (or selected display font) appears in Waybar labels and Rofi header; JetBrains Mono appears in Kitty terminal
   3. Fonts are declared once in Stylix and inherited by all GTK apps, terminals, and Hyprland components without per-app font overrides
   4. NERV Command Waybar title text shows the mechanical compressed look via CSS scaleX(0.82) transform
-  5. NERV Command wallpapers from the asset collection are set via swww; window gaps are tight (4px); animations use sharp ease-out timing
+  5. NERV Command wallpapers from the asset collection are set via hyprpaper; window gaps are tight (4px); animations use sharp ease-out timing
 **Plans**: TBD
 
 Plans:
