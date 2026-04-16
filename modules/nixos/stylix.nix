@@ -76,9 +76,6 @@ in {
     };
   };
 
-  # Disable Stylix's hyprpaper management; wallpaper.nix owns services.hyprpaper
-  stylix.targets.hyprpaper.enable = false;
-
   # Register Matisse EB for all fontconfig consumers (GTK apps, fc-list queries)
   fonts.packages = [ matisse-eb ];
 }

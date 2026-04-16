@@ -2,6 +2,8 @@
 let
   wp = ../../assets/wallpaper.jpg;  # relative path from modules/home/ to repo root
 in {
+  stylix.targets.hyprpaper.enable = false;
+
   services.hyprpaper = {
     enable = true;
     settings = {
