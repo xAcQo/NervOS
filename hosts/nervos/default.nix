@@ -21,6 +21,16 @@
   networking.hostName = "nervos";
   networking.networkmanager.enable = true;
 
+  # SSH — enabled for remote debugging of the VM
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;
+      PermitRootLogin = "no";
+    };
+  };
+  networking.firewall.allowedTCPPorts = [ 22 ];
+
   # Locale
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
