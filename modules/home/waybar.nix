@@ -38,10 +38,11 @@
     };
     # Stylix owns base waybar theming; lib.mkAfter appends after Stylix CSS.
     style = lib.mkAfter ''
-      /* NERV Command: mechanical title compression */
+      /* NERV Command: mechanical title styling.
+         GTK CSS does not support `transform: scaleX()`, so horizontal
+         compression comes from font-stretch + letter-spacing + uppercase. */
       #window label {
-        transform: scaleX(0.82);
-        transform-origin: left center;
+        font-stretch: condensed;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         font-weight: bold;
