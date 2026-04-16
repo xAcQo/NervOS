@@ -13,6 +13,7 @@
       modules-right = [ "pulseaudio" "network" "battery" "tray" ];
 
       "hyprland/workspaces" = { format = "{id}"; };
+      "hyprland/window" = { format = "{title}"; max-length = 60; };
       clock = {
         format = "{:%Y-%m-%d  %H:%M}";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
@@ -39,12 +40,12 @@
     # Stylix owns base waybar theming; lib.mkAfter appends after Stylix CSS.
     style = lib.mkAfter ''
       /* NERV Command: mechanical title styling.
-         GTK CSS does not support `transform: scaleX()`, so horizontal
-         compression comes from font-stretch + letter-spacing + uppercase. */
+         GTK CSS accepts only a narrow subset of web CSS — no transform,
+         no text-transform, no font-stretch. Use only letter-spacing and
+         font-weight. (Uppercase formatting belongs in the waybar config
+         format string if needed, not in CSS.) */
       #window label {
-        font-stretch: condensed;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        letter-spacing: 2px;
         font-weight: bold;
       }
 
