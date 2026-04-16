@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   programs.waybar = {
     enable = true;
@@ -36,6 +36,34 @@
       };
       tray.spacing = 8;
     };
-    # NO style block -- Stylix owns waybar theming via stylix.targets.waybar.
+    # Stylix owns base waybar theming; lib.mkAfter appends after Stylix CSS.
+    style = lib.mkAfter ''
+      /* NERV Command: mechanical title compression */
+      #window label {
+        transform: scaleX(0.82);
+        transform-origin: left center;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      /* Active workspace: NERV orange accent + bottom bar */
+      #workspaces button.active {
+        color: @base09;
+        border-bottom: 2px solid @base09;
+        background: transparent;
+      }
+
+      /* Clock: wire cyan */
+      #clock {
+        color: @base0C;
+        font-weight: bold;
+      }
+
+      /* Battery critical: alert red */
+      #battery.critical {
+        color: @base08;
+      }
+    '';
   };
 }

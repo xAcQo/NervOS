@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -13,14 +13,30 @@
       "$terminal" = "kitty";
 
       general = {
-        gaps_in = 5;
-        gaps_out = 10;
+        gaps_in = 4;          # NERV Command: tight gaps (was 5)
+        gaps_out = 8;         # NERV Command: tight outer gaps (was 10)
         border_size = 2;
         layout = "dwindle";
+        "col.active_border" = lib.mkForce "rgba(ff9830ff)";    # NERV orange
+        "col.inactive_border" = lib.mkForce "rgba(1a1a1aff)";  # Phase 1 dark bg
       };
 
       decoration = {
-        rounding = 8;
+        rounding = 0;          # MAGI straight-edge (was 8)
+        shadow.enabled = false; # Hyprland v0.41+ syntax
+      };
+
+      animations = {
+        enabled = true;
+        bezier = [ "nervOut, 0.16, 1, 0.3, 1" ];  # Sharp ease-out
+        animation = [
+          "windows, 1, 3, nervOut, popin 85%"
+          "windowsIn, 1, 3, nervOut, popin 85%"
+          "windowsOut, 1, 2, nervOut, popin 85%"
+          "fade, 1, 3, nervOut"
+          "workspaces, 1, 4, nervOut, slide"
+          "border, 1, 5, nervOut"
+        ];
       };
 
       input = {

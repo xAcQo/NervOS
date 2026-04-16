@@ -7,7 +7,8 @@
       default-timeout = 5000;
       anchor = "top-right";
       margin = "10";
-      border-radius = 6;
+      border-radius = 0;   # MAGI straight-edge -- overrides default rounding
+      border-size = 1;     # Clean single-pixel NERV border line
       # NO color options -- Stylix handles theming via stylix.targets.mako.
     };
   };
