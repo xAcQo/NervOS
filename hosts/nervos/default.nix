@@ -56,8 +56,15 @@
   # Enable Nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Wayland environment hint for Electron/Chromium apps
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # Wayland environment hints.
+  # WLR_* vars let wlroots/Hyprland run on VMware's virtual GPU (no DRM/EGL acceleration).
+  # NIXOS_OZONE_WL enables native Wayland for Electron/Chromium apps.
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    WLR_RENDERER = "pixman";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    WLR_RENDERER_ALLOW_SOFTWARE = "1";
+  };
 
   system.stateVersion = "25.05";
 }
