@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   # hyprlock + hypridle pair: lock-now + lock-on-idle for the pilot session.
   # PAM is auto-configured on the NixOS side via programs.hyprlock.enable = true.
@@ -7,7 +7,8 @@
     enable = true;
     settings = {
       general.hide_cursor = true;
-      background = [{
+      # mkForce overrides stylix.targets.hyprlock's background (path+color) with our screenshot+blur
+      background = lib.mkForce [{
         path = "screenshot";
         blur_passes = 3;
       }];
