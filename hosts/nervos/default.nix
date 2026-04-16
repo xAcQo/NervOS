@@ -67,11 +67,13 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Wayland environment hints.
-  # WLR_* vars let wlroots/Hyprland run on VMware's virtual GPU (no DRM/EGL acceleration).
+  # Hyprland hardcodes EGL init and ignores WLR_RENDERER=pixman, so we force
+  # Mesa to use llvmpipe (software GL) via LIBGL_ALWAYS_SOFTWARE. That gives
+  # a working EGL without needing VMware's 3D acceleration enabled on the host.
   # NIXOS_OZONE_WL enables native Wayland for Electron/Chromium apps.
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    WLR_RENDERER = "pixman";
+    LIBGL_ALWAYS_SOFTWARE = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
   };
