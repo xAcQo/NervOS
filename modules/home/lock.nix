@@ -12,13 +12,13 @@
         path = "screenshot";
         blur_passes = 3;
       }];
-      input-field = [{
+      input-field = lib.mkForce [{
         size = "200, 50";
         position = "0, -80";
         placeholder_text = "Pilot authentication";
         fade_on_empty = false;
       }];
-      label = [{
+      label = lib.mkForce [{
         text = "NERV COMMAND";
         position = "0, 160";
         halign = "center";
