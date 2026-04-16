@@ -10,9 +10,12 @@
     ../../modules/nixos/network.nix
   ];
 
-  # Boot
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Boot — GRUB BIOS (VM target). Switch to systemd-boot for EFI hardware.
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/sda";
+    useOSProber = false;
+  };
 
   # Networking
   networking.hostName = "nervos";
