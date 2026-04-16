@@ -5,21 +5,21 @@
 See: .planning/PROJECT.md (updated 2026-04-06)
 
 **Core value:** A single click or hotkey transports you into the world of Evangelion -- every pixel, sound, font, and animation shifts to match your chosen pilot's identity.
-**Current focus:** Phase 2 - Desktop Shell
+**Current focus:** Phase 3 - Typography & NERV Command Profile
 
 ## Current Position
 
-Phase: 2 of 10 (Desktop Shell) -- COMPLETE
-Plan: 4 of 4 in current phase (complete); next: Phase 3
-Status: Phase 2 complete (all 4 plans done); Phase 3 unblocked
-Last activity: 2026-04-15 -- Plan 02-04 executed (desktop shell wiring: audio, network, cliphist, hyprland keybinds)
+Phase: 3 of 10 (Typography & NERV Command Profile)
+Plan: 1 of 2 in current phase (complete); next: 03-02
+Status: Plan 03-01 complete (font system and Stylix wiring); Plan 03-02 next
+Last activity: 2026-04-16 -- Plan 03-01 executed (Matisse EB font derivation, Stylix sansSerif swap, hyprpaper conflict fix)
 
-Progress: [██████░░░░] 50%
+Progress: [██████░░░░] 55%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: ~2min
 - Total execution time: <1 hour
 
@@ -29,10 +29,11 @@ Progress: [██████░░░░] 50%
 |-------|-------|-------|----------|
 | 01-flake-foundation | 3/3 | ~5min | ~1.7min |
 | 02-desktop-shell | 4/4 | ~9min | ~2.3min |
+| 03-typography-nerv-command-profile | 1/2 | ~4min | ~4min |
 
 **Recent Trend:**
-- Last 5 plans: 02-01 (1min), 02-02 (1min), 02-03 (2min), 02-04 (5min, 3 tasks, 6 files)
-- Trend: 02-04 slower due to higher integration scope (wiring plan)
+- Last 5 plans: 02-02 (1min), 02-03 (2min), 02-04 (5min, 3 tasks, 6 files), 03-01 (4min, 2 tasks, 3 files)
+- Trend: 03-01 included font generation and Stylix wiring
 
 *Updated after each plan completion*
 
@@ -45,6 +46,7 @@ Progress: [██████░░░░] 50%
 | Phase 02-desktop-shell P02 | 1min | 3 tasks | 6 files |
 | Phase 02-desktop-shell P03 | 2min | 3 tasks | 3 files |
 | Phase 02-desktop-shell P04 | 5min | 3 tasks | 6 files |
+| Phase 03-typography P01 | 4min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -75,6 +77,10 @@ Recent decisions affecting current work:
 - [Phase 02-desktop-shell]: [Phase 02-04]: Super+V reassigned from togglefloating to cliphist; togglefloating moved to Super+Shift+V (KEY-07 requirement wins)
 - [Phase 02-desktop-shell]: [Phase 02-04]: bindel (repeat-on-hold) for volume/brightness; bindl (works when locked) for media transport -- replaces deprecated bind flags
 - [Phase 02-desktop-shell]: [Phase 02-04]: nm-applet + hyprpolkitagent started via Hyprland exec-once -- XDG autostart is not honored under Hyprland
+- [Phase 03-typography]: [Phase 03-01]: Matisse EB wired via pkgs.callPackage let-binding inside stylix.nix (no specialArgs, no flake overlay)
+- [Phase 03-typography]: [Phase 03-01]: Font generated with fonttools as valid OTF binary with PostScript name "MatissePro-EB" for fontconfig
+- [Phase 03-typography]: [Phase 03-01]: hyprpaper Stylix target disabled (stylix.targets.hyprpaper.enable = false) to prevent conflict with wallpaper.nix
+- [Phase 03-typography]: [Phase 03-01]: Serif kept as DejaVu (not a Phase 3 target); JetBrains Mono unchanged (blank-glyph contingency deferred to Plan 02)
 
 ### Pending Todos
 
@@ -88,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-15
-Stopped at: Completed 02-04-PLAN.md; Phase 2 complete, Phase 3 next
-Resume file: .planning/phases/03/ (Phase 3 plans TBD)
+Last session: 2026-04-16
+Stopped at: Completed 03-01-PLAN.md; Plan 03-02 next (NERV Command visual overrides)
+Resume file: .planning/phases/03-typography-nerv-command-profile/03-02-PLAN.md
