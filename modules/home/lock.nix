@@ -10,10 +10,14 @@ in
     enable = true;
     settings = {
       general.hide_cursor = true;
-      # mkForce overrides stylix.targets.hyprlock's background (path+color) with our screenshot+blur
+      # Software-rendered VMs cannot create DMA-BUF screencopy buffers, so
+      # `path = "screenshot"` fails ("Couldn't create a drm buffer"). Use the
+      # static NERV wallpaper instead -- gives a stable background that always
+      # renders, software GL or not.
       background = lib.mkForce [{
-        path = "screenshot";
-        blur_passes = 3;
+        path = toString ../../assets/wallpaper.jpg;
+        blur_passes = 2;
+        blur_size = 8;
       }];
       image = [{
         path = toString nervLogo;
