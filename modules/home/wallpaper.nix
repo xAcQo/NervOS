@@ -1,8 +1,8 @@
-{ ... }:
+{ lib, ... }:
 let
   wp = ../../assets/wallpaper.jpg;  # relative path from modules/home/ to repo root
 in {
-  stylix.targets.hyprpaper.enable = false;
+  stylix.targets.hyprpaper.enable = lib.mkForce false;
 
   services.hyprpaper = {
     enable = true;
