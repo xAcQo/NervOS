@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-{
+let
+  matisse-eb = pkgs.callPackage ../../pkgs/matisse-eb {};
+in {
   stylix = {
     enable = true;
 
@@ -10,7 +12,7 @@
     # Dark theme (all NervOS profiles are dark)
     polarity = "dark";
 
-    # NERV Command base16 palette (Phase 1 placeholder -- Phase 3 tunes this)
+    # NERV Command base16 palette (Phase 3 complete -- NERV Command palette finalized)
     base16Scheme = {
       base00 = "000000";  # Background: true black
       base01 = "1a1a1a";  # Lighter background
@@ -36,11 +38,10 @@
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font Mono";
       };
-      # Phase 3 replaces DejaVu Sans with Matisse EB display font.
-      # DejaVu is the Phase 1 placeholder -- Stylix font declaration makes swap trivial.
+      # Phase 3: Matisse EB display font -- NERV Command visual identity
       sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
+        package = matisse-eb;
+        name = "MatissePro-EB";
       };
       serif = {
         package = pkgs.dejavu_fonts;
@@ -74,4 +75,10 @@
       popups = 0.95;
     };
   };
+
+  # Disable Stylix's hyprpaper management; wallpaper.nix owns services.hyprpaper
+  stylix.targets.hyprpaper.enable = false;
+
+  # Register Matisse EB for all fontconfig consumers (GTK apps, fc-list queries)
+  fonts.packages = [ matisse-eb ];
 }
