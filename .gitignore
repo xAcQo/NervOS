@@ -1,0 +1,34 @@
+# Added by code-review-graph
+.code-review-graph/
+
+# Nix build artifacts
+result
+result-*
+.direnv/
+.envrc.local
+
+# Editor / OS cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Secrets — never commit
+*.age
+*.key
+secrets/decrypted/
+hosts/*/hardware-configuration.nix.local
+
+# Agent scratch dirs (keep .planning/ tracked so the VM has GSD plans)
+.claude/
+.cursor/
+.kiro/
+
+# Local reference material — too big / not needed for the build
+Lain (Pics)/
+Neon Genesis Evangelion (Pics)/
+Steins;Gate (Pics)/
+Gemini Deep Research.txt
