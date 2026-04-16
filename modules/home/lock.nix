@@ -1,4 +1,7 @@
 { lib, ... }:
+let
+  nervLogo = ../../assets/nerv-logo.png;
+in
 {
   # hyprlock + hypridle pair: lock-now + lock-on-idle for the pilot session.
   # PAM is auto-configured on the NixOS side via programs.hyprlock.enable = true.
@@ -11,6 +14,13 @@
       background = lib.mkForce [{
         path = "screenshot";
         blur_passes = 3;
+      }];
+      image = [{
+        path = toString nervLogo;
+        size = 200;
+        position = "0, 280";
+        halign = "center";
+        valign = "center";
       }];
       input-field = lib.mkForce [{
         size = "200, 50";
