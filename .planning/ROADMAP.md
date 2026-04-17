@@ -60,6 +60,17 @@ Plans:
 - [ ] 02-03: Wallpaper daemon and screenshot tooling
 - [ ] 02-04: Audio, network, clipboard, and window management keybinds
 
+### Phase 02.1: Fork shell (INSERTED)
+
+**Goal:** Fork caelestia-dots/shell as the NervOS unified desktop shell -- wire it into the flake, create a home-manager module, delete the superseded Waybar/Rofi/mako/lock/wallpaper/clipboard modules, migrate Hyprland keybinds to caelestia CLI, and verify on the live NixOS target.
+**Depends on:** Phase 2
+**Plans:** 3 plans
+
+Plans:
+- [ ] 02.1-01-PLAN.md -- Flake input + caelestia home-manager module + delete six superseded modules
+- [ ] 02.1-02-PLAN.md -- Hyprland keybind migration to caelestia CLI (SPACE/V/PrtSc/Shift+PrtSc)
+- [ ] 02.1-03-PLAN.md -- Rebuild checkpoint + resolve open questions (hyprlock, stylix target, system packages)
+
 ### Phase 3: Typography & NERV Command Profile
 **Goal**: The NERV Command profile is a complete visual identity applied across every pixel -- proving the theming architecture works end-to-end before building more profiles
 **Depends on**: Phase 2
