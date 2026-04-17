@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-04-06)
 ## Current Position
 
 Phase: 3 of 10 (Typography & NERV Command Profile)
-Plan: 1 of 2 in current phase (complete); next: 03-02
-Status: Plan 03-01 complete (font system and Stylix wiring); Plan 03-02 next
-Last activity: 2026-04-16 -- Plan 03-01 executed (Matisse EB font derivation, Stylix sansSerif swap, hyprpaper conflict fix)
+Plan: 2 of 2 in current phase (Tasks 1 & 2 complete; at blocking human-verify checkpoint)
+Status: Plan 03-02 Tasks 1 & 2 committed across previous session; awaiting user approval on NixOS target before SUMMARY
+Last activity: 2026-04-17 -- Verified all prior 03-02 commits; reached blocking checkpoint (nixos-rebuild + visual checklist on Linux target)
 
 Progress: [██████░░░░] 55%
 
@@ -94,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-16
-Stopped at: Completed 03-01-PLAN.md; Plan 03-02 next (NERV Command visual overrides)
-Resume file: .planning/phases/03-typography-nerv-command-profile/03-02-PLAN.md
+Last session: 2026-04-17
+Stopped at: Plan 03-02 Tasks 1 & 2 complete; blocking human-verify checkpoint pending (user must nixos-rebuild and confirm visual checklist on NixOS target)
+Resume file: .planning/phases/03-typography-nerv-command-profile/03-02-PLAN.md (Task 3 checkpoint)
