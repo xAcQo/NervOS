@@ -84,12 +84,14 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-        # Phase 2 Plan 04 -- desktop shell wiring
-        "$mainMod, SPACE, exec, rofi -show drun"
+        # Phase 2.1 -- caelestia shell wiring (supersedes rofi/cliphist/grimblast keybinds)
+        # NOTE: Exact subcommand grammar verified at Plan 03 checkpoint via `caelestia --help`.
+        # If any of these fail post-rebuild, Plan 03's decision checkpoint updates them.
+        "$mainMod, SPACE, exec, caelestia shell drawers toggle launcher"
         "$mainMod, L, exec, loginctl lock-session"
-        "$mainMod, V, exec, cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"
-        ", Print, exec, grimblast copy area"
-        "SHIFT, Print, exec, grimblast copy screen"
+        "$mainMod, V, exec, caelestia clipboard"
+        ", Print, exec, caelestia screenshot region"
+        "SHIFT, Print, exec, caelestia screenshot screen"
       ];
 
       # Repeat-on-hold / locked-input keys: volume + brightness
