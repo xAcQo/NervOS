@@ -84,14 +84,18 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-        # Phase 2.1 -- caelestia shell wiring (supersedes rofi/cliphist/grimblast keybinds)
-        # NOTE: Exact subcommand grammar verified at Plan 03 checkpoint via `caelestia --help`.
-        # If any of these fail post-rebuild, Plan 03's decision checkpoint updates them.
-        "$mainMod, SPACE, exec, caelestia shell drawers toggle launcher"
+        # Phase 2.1 -- caelestia shell wiring (verified at Plan 03 checkpoint)
+        # Launcher: caelestia registers GlobalShortcut (appid="caelestia") via hyprland-global-shortcuts protocol.
+        # Hyprland's `global` dispatcher triggers it -- NOT exec.
+        "$mainMod, SPACE, global, caelestia:launcher"
+        # Lock: caelestia uses WlSessionLock (its own lock surface, not hyprlock).
+        # loginctl lock-session fires the systemd-logind lock signal, which caelestia intercepts.
         "$mainMod, L, exec, loginctl lock-session"
         "$mainMod, V, exec, caelestia clipboard"
-        ", Print, exec, caelestia screenshot region"
-        "SHIFT, Print, exec, caelestia screenshot screen"
+        # Screenshot: -r uses caelestia's built-in area picker (no grimblast/slurp needed);
+        # fullscreen calls grim directly (grim stays in system packages).
+        ", Print, exec, caelestia screenshot -r"
+        "SHIFT, Print, exec, caelestia screenshot"
       ];
 
       # Repeat-on-hold / locked-input keys: volume + brightness

@@ -49,14 +49,12 @@
     git
     vim
 
-    # Screenshot toolchain (Plan 02-03)
-    grimblast          # Hyprland-blessed screenshot wrapper
-    grim               # Wayland screenshot primitive
-    slurp              # region selector for grimblast area mode
-    hyprpicker         # screen freeze during area select (optional but recommended)
-    wl-clipboard       # provides wl-copy/wl-paste -- required by grimblast copy and by cliphist
-    jq                 # grimblast dependency for JSON parsing of hyprctl output
-    libnotify          # provides notify-send -- grimblast status notifications + manual mako test
+    # Screenshot toolchain (Phase 2.1: grimblast/slurp removed -- caelestia handles region via
+    # built-in WlScreencopy area picker; fullscreen screenshot calls grim directly)
+    grim               # Wayland screenshot primitive (used by caelestia screenshot fullscreen)
+    wl-clipboard       # wl-copy/wl-paste -- used by caelestia screenshot fullscreen output
+    jq                 # general JSON utility
+    libnotify          # notify-send -- general system notifications
 
     # Input helpers used by keybinds (Plan 02-04 will call these)
     brightnessctl      # XF86MonBrightness*
