@@ -5,21 +5,21 @@
 See: .planning/PROJECT.md (updated 2026-04-06)
 
 **Core value:** A single click or hotkey transports you into the world of Evangelion -- every pixel, sound, font, and animation shifts to match your chosen pilot's identity.
-**Current focus:** Phase 3 - Typography & NERV Command Profile
+**Current focus:** Phase 2.1 fork-shell — plan 01 complete, caelestia-shell wired into flake
 
 ## Current Position
 
-Phase: 3 of 10 (Typography & NERV Command Profile)
-Plan: 2 of 2 in current phase (Tasks 1 & 2 complete; at blocking human-verify checkpoint)
-Status: Plan 03-02 Tasks 1 & 2 committed across previous session; awaiting user approval on NixOS target before SUMMARY
-Last activity: 2026-04-17 -- Verified all prior 03-02 commits; reached blocking checkpoint (nixos-rebuild + visual checklist on Linux target)
+Phase: 2.1 of 10 (fork-shell — executing)
+Plan: 02.1-01 COMPLETE; 02.1-02 COMPLETE (Hyprland keybinds rerouted through caelestia CLI); 02.1-03 next
+Status: Plan 02.1-02 complete: five Phase-2 keybinds (SPACE, V, PrtSc, SHIFT+PrtSc, L) rewired in modules/home/hyprland.nix -- SPACE/V/PrtSc/SHIFT+PrtSc call caelestia; Super+L retained on loginctl lock-session. All other binds (workspaces, focus, terminal, media, brightness, togglefloating, exec-once) byte-identical. Surgical 7-line insertion / 5-line deletion. `nix flake check --no-build` deferred to NixOS target (Windows dev host). Phase 3 Plan 03-02 remains parked at checkpoint; will resume after Phase 2.1 lands.
+Last activity: 2026-04-18 -- Plan 02.1-02 executed; commit 5e0bbaf (hyprland.nix keybind rewire)
 
-Progress: [██████░░░░] 55%
+Progress: [███████░░░] 64%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 10
 - Average duration: ~2min
 - Total execution time: <1 hour
 
@@ -47,8 +47,14 @@ Progress: [██████░░░░] 55%
 | Phase 02-desktop-shell P03 | 2min | 3 tasks | 3 files |
 | Phase 02-desktop-shell P04 | 5min | 3 tasks | 6 files |
 | Phase 03-typography P01 | 4min | 2 tasks | 3 files |
+| Phase 02.1-fork-shell P01 | 2min | 2 tasks | 9 files (1 created, 2 modified, 6 deleted) |
+| Phase 02.1 P02 | 1min | 1 tasks | 1 files |
 
 ## Accumulated Context
+
+### Roadmap Evolution
+
+- Phase 2.1 inserted after Phase 2: Fork shell (URGENT)
 
 ### Decisions
 
@@ -81,6 +87,13 @@ Recent decisions affecting current work:
 - [Phase 03-typography]: [Phase 03-01]: Font generated with fonttools as valid OTF binary with PostScript name "MatissePro-EB" for fontconfig
 - [Phase 03-typography]: [Phase 03-01]: hyprpaper Stylix target disabled (stylix.targets.hyprpaper.enable = false) to prevent conflict with wallpaper.nix
 - [Phase 03-typography]: [Phase 03-01]: Serif kept as DejaVu (not a Phase 3 target); JetBrains Mono unchanged (blank-glyph contingency deferred to Plan 02)
+- [Phase 02.1-fork-shell]: [Plan 02.1-01]: caelestia-shell input follows nixpkgs only (flake does not consume home-manager)
+- [Phase 02.1-fork-shell]: [Plan 02.1-01]: home-manager.sharedModules wires caelestia.homeManagerModules.default -- do not import inside ./modules/home
+- [Phase 02.1-fork-shell]: [Plan 02.1-01]: programs.caelestia.systemd.enable=true on graphical-session.target; NEVER also add caelestia to Hyprland exec-once (double-start hazard)
+- [Phase 02.1-fork-shell]: [Plan 02.1-01]: Do NOT add pkgs.quickshell to environment.systemPackages (Research Pitfall 1: transitive version skew)
+- [Phase 02.1-fork-shell]: [Plan 02.1-01]: Atomic delete+create commit -- never leave flake evaluable with both old and new shells defined
+- [Phase 02.1-fork-shell]: [Plan 02.1-02]: Caelestia subcommand grammar provisional (shell drawers toggle launcher, clipboard, screenshot region, screenshot screen) -- Plan 03 reconciles against caelestia --help
+- [Phase 02.1-fork-shell]: [Plan 02.1-02]: Super+L kept on loginctl lock-session -- session-lock is the vendor-neutral contract caelestia's lock listens on; Plan 03 can swap if --help shows different grammar
 
 ### Pending Todos
 
@@ -94,6 +107,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-17
-Stopped at: Plan 03-02 Tasks 1 & 2 complete; blocking human-verify checkpoint pending (user must nixos-rebuild and confirm visual checklist on NixOS target)
-Resume file: .planning/phases/03-typography-nerv-command-profile/03-02-PLAN.md (Task 3 checkpoint)
+Last session: 2026-04-18
+Stopped at: Completed 02.1-02-PLAN.md (Hyprland keybinds rerouted through caelestia CLI). Parallel-parked: Plan 03-02 Tasks 1 & 2 complete with blocking human-verify checkpoint pending.
+Resume file: .planning/phases/02.1-fork-shell/02.1-03-PLAN.md (validation + subcommand reconciliation)
+Deferred verification: `nix flake lock` + `nix flake check --no-build` must run green on NixOS target before Plans 02.1-01 and 02.1-02 merge (Nix unavailable on Windows dev host). Plan 02.1-03 includes live `caelestia --help` verification which will confirm or correct the provisional subcommand grammar committed in 02.1-02.
