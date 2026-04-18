@@ -34,7 +34,13 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.sharedModules = [ caelestia-shell.homeManagerModules.default ];
+          home-manager.sharedModules = [
+            caelestia-shell.homeManagerModules.default
+            # Use shell-only package (no caelestia-cli) to avoid fetching the CLI flake input.
+            # caelestia CLI subcommands still work via the shell binary; this just skips the
+            # standalone CLI overlay. Revisit if caelestia-cli becomes reliably fetchable.
+            { programs.caelestia.package = caelestia-shell.packages.x86_64-linux.caelestia-shell; }
+          ];
           home-manager.users.pilot = import ./modules/home;
         }
       ];
