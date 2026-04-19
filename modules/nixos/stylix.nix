@@ -5,9 +5,6 @@ in {
   stylix = {
     enable = true;
 
-    # hyprlock disabled: caelestia provides its own WlSessionLock surface.
-    targets.hyprlock.enable = false;
-
     # Wallpaper (required -- Stylix fails to evaluate without an image)
     # Phase 3 replaces this with real NERV Command wallpaper from asset collection.
     image = ../../assets/wallpaper.jpg;
