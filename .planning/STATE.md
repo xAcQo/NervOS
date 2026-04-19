@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-06)
 
 **Core value:** A single click or hotkey transports you into the world of Evangelion -- every pixel, sound, font, and animation shifts to match your chosen pilot's identity.
-**Current focus:** Phase 2.1 fork-shell — plan 01 complete, caelestia-shell wired into flake
+**Current focus:** Phase 2.1 COMPLETE — caelestia shell live on NervOS VM; ready to resume Phase 3
 
 ## Current Position
 
-Phase: 2.1 of 10 (fork-shell — executing)
-Plan: 02.1-01 COMPLETE; 02.1-02 COMPLETE (Hyprland keybinds rerouted through caelestia CLI); 02.1-03 next
-Status: Plan 02.1-02 complete: five Phase-2 keybinds (SPACE, V, PrtSc, SHIFT+PrtSc, L) rewired in modules/home/hyprland.nix -- SPACE/V/PrtSc/SHIFT+PrtSc call caelestia; Super+L retained on loginctl lock-session. All other binds (workspaces, focus, terminal, media, brightness, togglefloating, exec-once) byte-identical. Surgical 7-line insertion / 5-line deletion. `nix flake check --no-build` deferred to NixOS target (Windows dev host). Phase 3 Plan 03-02 remains parked at checkpoint; will resume after Phase 2.1 lands.
-Last activity: 2026-04-18 -- Plan 02.1-02 executed; commit 5e0bbaf (hyprland.nix keybind rewire)
+Phase: 2.1 of 10 (fork-shell — COMPLETE)
+Plan: All 3 plans complete (02.1-01, 02.1-02, 02.1-03)
+Status: Phase 2.1 fully executed and deployed on VM. caelestia service enabled, hyprlock removed, keybinds corrected (global dispatcher for launcher, caelestia screenshot -r/-fullscreen). Next: resume Phase 3 (03-02 checkpoint parked, plan 03-03 pending).
+Last activity: 2026-04-19 -- Plan 02.1-03 checkpoint completed; final rebuild deployed on NervOS VM
 
-Progress: [███████░░░] 64%
+Progress: [████████░░] 75%
 
 ## Performance Metrics
 
@@ -94,6 +94,11 @@ Recent decisions affecting current work:
 - [Phase 02.1-fork-shell]: [Plan 02.1-01]: Atomic delete+create commit -- never leave flake evaluable with both old and new shells defined
 - [Phase 02.1-fork-shell]: [Plan 02.1-02]: Caelestia subcommand grammar provisional (shell drawers toggle launcher, clipboard, screenshot region, screenshot screen) -- Plan 03 reconciles against caelestia --help
 - [Phase 02.1-fork-shell]: [Plan 02.1-02]: Super+L kept on loginctl lock-session -- session-lock is the vendor-neutral contract caelestia's lock listens on; Plan 03 can swap if --help shows different grammar
+- [Phase 02.1-fork-shell]: [Plan 02.1-03]: caelestia lock = WlSessionLock (own QML surface, NOT hyprlock) -- programs.hyprlock.enable = false; stylix.targets.hyprlock does not exist in current Stylix
+- [Phase 02.1-fork-shell]: [Plan 02.1-03]: Launcher keybind = `global, caelestia:launcher` (GlobalShortcut appid="caelestia") -- NOT exec; Hyprland global dispatcher required
+- [Phase 02.1-fork-shell]: [Plan 02.1-03]: Screenshot region = `caelestia screenshot -r` (const="slurp" → shell IPC area picker); fullscreen = `caelestia screenshot` (calls grim directly)
+- [Phase 02.1-fork-shell]: [Plan 02.1-03]: caelestia-shell default package (with-cli) unavailable via 504; override to caelestia-shell.packages.x86_64-linux.caelestia-shell in sharedModules
+- [Phase 02.1-fork-shell]: [Plan 02.1-03]: grimblast + slurp removed from system packages; grim + wl-clipboard kept (caelestia fullscreen screenshot uses grim directly)
 
 ### Pending Todos
 
@@ -107,7 +112,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-18
-Stopped at: Completed 02.1-02-PLAN.md (Hyprland keybinds rerouted through caelestia CLI). Parallel-parked: Plan 03-02 Tasks 1 & 2 complete with blocking human-verify checkpoint pending.
-Resume file: .planning/phases/02.1-fork-shell/02.1-03-PLAN.md (validation + subcommand reconciliation)
-Deferred verification: `nix flake lock` + `nix flake check --no-build` must run green on NixOS target before Plans 02.1-01 and 02.1-02 merge (Nix unavailable on Windows dev host). Plan 02.1-03 includes live `caelestia --help` verification which will confirm or correct the provisional subcommand grammar committed in 02.1-02.
+Last session: 2026-04-19
+Stopped at: Phase 2.1 complete. All 3 plans executed, VM rebuilt and running caelestia shell.
+Resume file: .planning/phases/03-typography-nerv-command-profile/03-02-PLAN.md (Task 3 checkpoint — was parked pre-Phase 2.1 pivot)
+Next action: `/gsd:plan-phase 3` to re-examine Phase 3 scope (waybar/rofi modules gone; caelestia handles shell theming; Phase 3 plans may need significant revision before execution).
