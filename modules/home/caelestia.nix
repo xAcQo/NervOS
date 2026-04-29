@@ -37,11 +37,11 @@
 
   # Provision NGE wallpapers for caelestia to cycle through.
   # Keys are relative to homeDirectory (/home/styx) — no tilde.
-  # path + string is required for directory names with spaces (../../. = repo root).
+  # Source paths must be inside the git tree (Neon Genesis Evangelion (Pics)/ is gitignored).
   home.file = {
     "Pictures/wallpapers/4-21012F64SA53.jpg".source =
-      ../../. + "/Neon Genesis Evangelion (Pics)/4-21012F64SA53.jpg";
-    "Pictures/wallpapers/numbers-interfaces-neon-genesis-evangelion-preview.jpg".source =
-      ../../. + "/Neon Genesis Evangelion (Pics)/numbers-interfaces-anime-neon-genesis-evangelion-wallpaper-preview.jpg";
+      ../../assets/wallpapers/4-21012F64SA53.jpg;
+    "Pictures/wallpapers/nge-numbers-interfaces.jpg".source =
+      ../../assets/wallpapers/nge-numbers-interfaces.jpg;
   };
 }
