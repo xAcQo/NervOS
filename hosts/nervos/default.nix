@@ -36,11 +36,22 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # User
-  users.users.pilot = {
+  users.users.styx = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" ];
     initialPassword = "nervos";
   };
+
+  # NOPASSWD nixos-rebuild so SSH remote rebuilds work without a TTY.
+  security.sudo.extraRules = [
+    {
+      users = [ "styx" ];
+      commands = [
+        { command = "/run/current-system/sw/bin/nixos-rebuild"; options = [ "NOPASSWD" ]; }
+        { command = "/nix/var/nix/profiles/system/bin/nixos-rebuild"; options = [ "NOPASSWD" ]; }
+      ];
+    }
+  ];
 
   # System packages
   environment.systemPackages = with pkgs; [

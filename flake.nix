@@ -41,7 +41,7 @@
             # standalone CLI overlay. Revisit if caelestia-cli becomes reliably fetchable.
             { programs.caelestia.package = caelestia-shell.packages.x86_64-linux.caelestia-shell; }
           ];
-          home-manager.users.pilot = import ./modules/home;
+          home-manager.users.styx = import ./modules/home;
         }
       ];
     };
