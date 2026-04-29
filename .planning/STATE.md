@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-06)
 
 **Core value:** A single click or hotkey transports you into the world of Evangelion -- every pixel, sound, font, and animation shifts to match your chosen pilot's identity.
-**Current focus:** Phase 2.1 COMPLETE — caelestia shell live on NervOS VM; ready to resume Phase 3
+**Current focus:** Phase 3 COMPLETE — NERV Command typography + wallpaper deployed; ready for Phase 4
 
 ## Current Position
 
-Phase: 2.1 of 10 (fork-shell — COMPLETE)
-Plan: All 3 plans complete (02.1-01, 02.1-02, 02.1-03)
-Status: Phase 2.1 fully executed and deployed on VM. caelestia service enabled, hyprlock removed, keybinds corrected (global dispatcher for launcher, caelestia screenshot -r/-fullscreen). Next: resume Phase 3 (03-02 checkpoint parked, plan 03-03 pending).
-Last activity: 2026-04-19 -- Plan 02.1-03 checkpoint completed; final rebuild deployed on NervOS VM
+Phase: 3 of 10 (typography-nerv-command-profile — COMPLETE)
+Plan: All 2 plans complete (03-01, 03-02)
+Status: Caelestia bar/launcher render MatissePro-EB; NGE wallpaper provisioned via home.file; NOPASSWD sudo wired for remote rebuilds. User renamed pilot→styx across flake to match VM reality. Visual checkpoint pending eyeball confirmation in VMware.
+Last activity: 2026-04-30 -- Plan 03-02 executed remotely via SSH; rebuild succeeded; remote-rebuild loop verified.
 
-Progress: [████████░░] 75%
+Progress: [█████████░] 90%
 
 ## Performance Metrics
 
