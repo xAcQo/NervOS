@@ -22,12 +22,25 @@
     # (launcher toggle, clipboard, screenshot, record). Handled in Plan 02.
     cli.enable = true;
 
-    # Behaviour-only settings. Fonts/colors deferred -- caelestia ships
-    # Rubik + CaskaydiaCove by default; font pivot to Cinzel/Noto Serif
-    # Display is deferred out of Phase 2.1 (see roadmap Phase 3 rework).
     settings = {
       bar.status.showBattery = true;
       paths.wallpaperDir = "~/Pictures/wallpapers";
+      # Phase 3: NERV Command font identity.
+      # sans = caelestia bar/launcher display font; mono = OSD/terminal surfaces.
+      # Do NOT set "material" (breaks Material Symbols Rounded icon rendering).
+      appearance.font.family = {
+        sans = "MatissePro-EB";
+        mono = "JetBrainsMono Nerd Font Mono";
+      };
     };
+  };
+
+  # Provision NGE wallpapers for caelestia to cycle through.
+  # Keys are relative to homeDirectory (/home/pilot) — no tilde.
+  home.file = {
+    "Pictures/wallpapers/4-21012F64SA53.jpg".source =
+      ../../"Neon Genesis Evangelion (Pics)"/"4-21012F64SA53.jpg";
+    "Pictures/wallpapers/numbers-interfaces-neon-genesis-evangelion-preview.jpg".source =
+      ../../"Neon Genesis Evangelion (Pics)"/"numbers-interfaces-anime-neon-genesis-evangelion-wallpaper-preview.jpg";
   };
 }
